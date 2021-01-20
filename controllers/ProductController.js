@@ -24,10 +24,8 @@ module.exports = {
 	},
 	create: function(req,res){
         let obj = new model;
-        obj.nombre = req.body.nombre
 		obj.descripcion = req.body.descripcion;
         obj.precio = req.body.precio;
-        obj.stock = req.body.stock
 		obj.save(function(err,data){
 			if(err){
 				console.log(err);
@@ -41,10 +39,8 @@ module.exports = {
 		console.log(req.body);
 		let val_id = req.body._id;
 		let datos = {
-            nombre: req.body.nombre,
 			descripcion : req.body.descripcion,
-            precio : req.body.precio,
-            stock: req.body.stock
+            precio : req.body.precio
 		};
 		model.updateOne({_id:val_id},datos,function(err,data){
 			if(err){
